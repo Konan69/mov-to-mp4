@@ -1,0 +1,28 @@
+MOV to MP4
+Copyright (c) 2026 Konan69. The app's own code is under the MIT License (see LICENSE).
+
+This project uses FFmpeg (https://ffmpeg.org), licensed under the GNU Lesser
+General Public License version 2.1 or later (LGPL-2.1-or-later). FFmpeg is a
+trademark of Fabrice Bellard.
+
+How FFmpeg is used
+- native/build.sh builds FFmpeg 8.1.3 as static libraries (libavformat,
+  libavcodec, libavutil) and links them with native/remux.c into one shared
+  library, libmovmp4.so, per Android ABI. The configuration is LGPL only: no
+  --enable-gpl, no --enable-nonfree, no codecs; only the MOV demuxer, the MP4
+  muxer, the parsers and the aac_adtstoasc, vp9_superframe and
+  extract_extradata bitstream filters. The exact configure flags are in
+  native/build.sh.
+- native/build.sh applies no patches to the FFmpeg source.
+- The prebuilt app/src/main/jniLibs/*/libmovmp4.so files and any APK built from
+  this repository contain that FFmpeg code.
+
+Your rights under the LGPL
+- FFmpeg 8.1.3 source: https://ffmpeg.org/releases/ffmpeg-8.1.3.tar.xz
+- The complete source of everything linked into libmovmp4.so (native/remux.c
+  and native/build.sh) is in this repository. To use a modified FFmpeg, point
+  FF_SRC at your tree, run native/build.sh, and rebuild the APK.
+- The LGPL 2.1 text: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+
+Anyone who distributes a binary built from this repository must pass on these
+same rights: ship or link the FFmpeg source above and this NOTICE.

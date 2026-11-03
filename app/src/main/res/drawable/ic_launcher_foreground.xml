@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The picture (play triangle) stays the same while the wrapper around it
+     changes: a faded bracket for the old container, a bright one for the new. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:pathData="M30,51V44a14,14 0,0 1,14 -14H51"
+        android:strokeColor="#80FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeWidth="7.5" />
+    <path
+        android:pathData="M78,57V64a14,14 0,0 1,-14 14H57"
+        android:strokeLineCap="round"
+        android:strokeWidth="7.5">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:endX="79"
+                android:endY="79"
+                android:startX="56"
+                android:startY="56"
+                android:type="linear">
+                <item android:color="#FFA6FFDD" android:offset="0" />
+                <item android:color="#FF22DE99" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M46.86,43.46L63.86,54L46.86,64.54Z"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4.42" />
+</vector>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Names and the un-prefixed "supported" attribute are what
+     android.media.ApplicationMediaCapabilities parses. -->
+<media-capabilities xmlns:android="http://schemas.android.com/apk/res/android">
+    <format android:name="HEVC" supported="true" />
+    <format android:name="HDR10" supported="true" />
+    <format android:name="HDR10Plus" supported="true" />
+    <format android:name="Dolby-Vision" supported="true" />
+    <format android:name="HLG" supported="true" />
+    <format android:name="SlowMotion" supported="true" />
+</media-capabilities>

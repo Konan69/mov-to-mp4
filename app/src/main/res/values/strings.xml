@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MOV to MP4</string>
+    <string name="open_with_label">Convert to MP4</string>
+    <string name="channel_name">Conversions</string>
+    <string name="notif_preparing">Getting ready</string>
+    <string name="notif_progress">Converting · %1$d%%</string>
+    <string name="notif_progress_more">Converting · %1$d%% · %2$d more waiting</string>
+    <string name="notif_mixed">%1$d converted, %2$d couldn\'t be converted</string>
+    <plurals name="notif_done">
+        <item quantity="one">%d video converted to MP4</item>
+        <item quantity="other">%d videos converted to MP4</item>
+    </plurals>
+    <plurals name="notif_failed">
+        <item quantity="one">%d video couldn\'t be converted</item>
+        <item quantity="other">%d videos couldn\'t be converted</item>
+    </plurals>
+</resources>
