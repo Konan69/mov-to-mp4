@@ -1,0 +1,37 @@
+{
+  "repo": "mov-to-mp4",
+  "accent": "#FFB86B",
+  "hero": {
+    "command": "./gradlew :app:assembleRelease",
+    "output": [
+      { "text": "> Task :app:minifyReleaseWithR8", "style": "muted" },
+      { "text": "> Task :app:packageRelease", "style": "muted" },
+      { "text": "> Task :app:assembleRelease", "style": "muted" },
+      { "text": "BUILD SUCCESSFUL in 1m 30s", "style": "accent" },
+      { "text": "$ unzip -l app/build/outputs/apk/release/app-release.apk | grep libmovmp4", "style": "muted" },
+      { "text": "  1792496  1981-01-01 01:01   lib/arm64-v8a/libmovmp4.so" },
+      { "text": "  1761608  1981-01-01 01:01   lib/armeabi-v7a/libmovmp4.so" },
+      { "text": "  1929792  1981-01-01 01:01   lib/x86_64/libmovmp4.so" }
+    ],
+    "value": "Turns a .mov into an .mp4 on the phone, with no re-encode."
+  },
+  "diagram": {
+    "direction": "TB",
+    "nodes": [
+      { "id": "intent", "label": "Open with / Share", "sublabel": "MainActivity" },
+      { "id": "converter", "label": "Converter", "sublabel": "Plan.of" },
+      { "id": "service", "label": "ConvertService", "sublabel": "foreground" },
+      { "id": "remux", "label": "Remux.kt", "sublabel": "JNI, file descriptors" },
+      { "id": "native", "label": "libmovmp4.so", "sublabel": "remux.c + libavformat" },
+      { "id": "store", "label": "MediaStore", "sublabel": "Movies/MOV to MP4" }
+    ],
+    "edges": [
+      { "from": "intent", "to": "converter", "label": "content://" },
+      { "from": "converter", "to": "service", "label": "keeps alive" },
+      { "from": "converter", "to": "remux", "label": "in, out fd" },
+      { "from": "remux", "to": "native", "label": "copy, verify" },
+      { "from": "native", "to": "store", "label": "mp4" }
+    ],
+    "primary": ["intent", "converter", "remux", "native", "store"]
+  }
+}
