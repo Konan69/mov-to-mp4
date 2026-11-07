@@ -1,6 +1,6 @@
 # mov-to-mp4
 
-*Changes the envelope, never the letter. iPhone video goes in as .mov and leaves as .mp4 with every frame untouched.*
+Turn iPhone .mov files into .mp4 on your phone, without re-encoding.
 
 An Android app that turns a `.mov` from an iPhone or a camera into an `.mp4` on the phone, without re-encoding.
 
