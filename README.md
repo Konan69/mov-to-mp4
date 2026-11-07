@@ -1,5 +1,7 @@
 # mov-to-mp4
 
+*Changes the envelope, never the letter. iPhone video goes in as .mov and leaves as .mp4 with every frame untouched.*
+
 An Android app that turns a `.mov` from an iPhone or a camera into an `.mp4` on the phone, without re-encoding.
 
 ![A terminal builds the release APK with Gradle and lists the FFmpeg-based libmovmp4.so packed in it for three Android ABIs](docs/media/hero.gif)
